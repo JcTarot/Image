@@ -18,12 +18,7 @@ public class Image {
         // CONSTANTES
         final int NL=5,NC=6;
         // VARIABLES
-
-        // tableau test
-        int[][] T = new int[][] {
-                                    {5,50},
-                                    {75,40}
-                                    };   
+ 
         // initialisation de la matrice image
         int[][] M = new int[][] {
                     {25,	28,	100,	100,	100,	100},
@@ -90,18 +85,6 @@ public class Image {
         }
         return tab;
     }
-
-        public static void AfficheTableau(int[][] tab) {
-        // Affiche Tableau Dimension 2 ordre 5 
-        // CONSTANTES
-        final int NL=5,NC=6;
-        for (int i = 0; i < NL; i++) {
-            System.out.println();
-            for (int j = 0; j < NC; j++) {
-                System.out.print(tab[i][j] + " \t");
-            }
-        }
-    }
     
     public static int Moyenne(int[][] tab) {
         // Affiche Tableau Dimension 2 ordre 5 
@@ -133,4 +116,17 @@ public class Image {
         }
         return tab;
     }
+        
+    public static void AfficheTableau(int[][] tab) {
+        // Affiche Tableau Dimension 2 ordre 5 
+        // CONSTANTES
+        final int NL=5,NC=6;
+        for (int i = 0; i < NL; i++) {
+            System.out.println();
+            for (int j = 0; j < NC; j++) {
+                System.out.print(tab[i][j] + " \t");
+            }
+        }
+    }
+// fin main    
 }
