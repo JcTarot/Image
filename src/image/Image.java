@@ -43,10 +43,18 @@ public class Image {
         ContrastPlus(M);
         AfficheTableau(M);
         System.out.println("Matrice Image Contrast Plus");
-        
         // moyenne des valeurs de la matrice image   
         System.out.println();
         System.out.printf("\rMatrice Image Moyenne : %d", Moyenne(M));
+        System.out.println();
+        // matrice image désaturé
+        ContrastMoins(M);
+        AfficheTableau(M);
+        System.out.println("Matrice Image Contrast Moins");
+        // moyenne des valeurs de la matrice image   
+        System.out.println();
+        System.out.printf("\rMatrice Image Moyenne : %d", Moyenne(M));
+        System.out.println();
     }
 
     public static int[][] Mystere(int[][] tab) {
@@ -106,5 +114,23 @@ public class Image {
             }
         }
         return somme / (NL*NC);
+    }
+    
+        public static int[][] ContrastMoins(int[][] tab) {
+        // Matrice : tableau d’entiers de 5 lignes et 6 colonnes
+        // CONSTANTES
+        final int NL=5,NC=6;
+        // VARIABLES
+        int seuil = Moyenne(tab);
+        
+        int cm;
+        
+        for (int i = 0; i < NL; i++) {
+            for (int j = 0; j < NC; j++) {
+                cm = ( tab[i][j] - seuil ) / 2;
+                tab[i][j] = tab[i][j] - cm;
+            }
+        }
+        return tab;
     }
 }
