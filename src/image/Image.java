@@ -52,19 +52,19 @@ public class Image {
         System.out.println();
     }
 
-    public static int[][] Mystere(int[][] tab) {
+    public static int[][] Mystere(int[][] matrice) {
         // Matrice : tableau d’entiers de 5 lignes et 6 colonnes
         // CONSTANTES
         final int NL=5,NC=6;
         for (int i = 0; i < NL; i++) {
             for (int j = 0; j < NC; j++) {
-                tab[i][j] = 100 - tab[i][j];
+                matrice[i][j] = 100 - matrice[i][j];
             }
         }
-        return tab;
+        return matrice;
     }
 
-    public static int[][] ContrastPlus(int[][] tab) {
+    public static int[][] ContrastPlus(int[][] matrice) {
         // Matrice : tableau d’entiers de 5 lignes et 6 colonnes
         // CONSTANTES
         final int NL=5,NC=6;
@@ -73,58 +73,58 @@ public class Image {
         
         for (int i = 0; i < NL; i++) {
             for (int j = 0; j < NC; j++) {
-                if ( tab[i][j] > 75 ) {
+                if ( matrice[i][j] > 75 ) {
                     cp = 100;
-                } else if ( tab[i][j] > 50 ) {
+                } else if ( matrice[i][j] > 50 ) {
                     cp = 75;
                 } else {
-                    cp = tab[i][j]/2;
+                    cp = matrice[i][j]/2;
                 }
-                tab[i][j] = cp;
+                matrice[i][j] = cp;
             }
         }
-        return tab;
+        return matrice;
     }
     
-    public static int Moyenne(int[][] tab) {
-        // Affiche Tableau Dimension 2 ordre 5 
+    public static int Moyenne(int[][] matrice) {
+        // Moyenne du Tableau Dimension 2 ordre 5 
         // CONSTANTES
         final int NL=5,NC=6;
         int somme = 0;
         for (int i = 0; i < NL; i++) {
             for (int j = 0; j < NC; j++) {
-                somme = tab[i][j] + somme;
+                somme = matrice[i][j] + somme;
             }
         }
         return somme / (NL*NC);
     }
     
-        public static int[][] ContrastMoins(int[][] tab) {
+        public static int[][] ContrastMoins(int[][] matrice) {
         // Matrice : tableau d’entiers de 5 lignes et 6 colonnes
         // CONSTANTES
         final int NL=5,NC=6;
         // VARIABLES
-        int seuil = Moyenne(tab);
+        int seuil = Moyenne(matrice);
         
         int cm;
         
         for (int i = 0; i < NL; i++) {
             for (int j = 0; j < NC; j++) {
-                cm = ( tab[i][j] - seuil ) / 2;
-                tab[i][j] = tab[i][j] - cm;
+                cm = ( matrice[i][j] - seuil ) / 2;
+                matrice[i][j] = matrice[i][j] - cm;
             }
         }
-        return tab;
+        return matrice;
     }
         
-    public static void AfficheTableau(int[][] tab) {
+    public static void AfficheTableau(int[][] matrice) {
         // Affiche Tableau Dimension 2 ordre 5 
         // CONSTANTES
         final int NL=5,NC=6;
         for (int i = 0; i < NL; i++) {
             System.out.println();
             for (int j = 0; j < NC; j++) {
-                System.out.print(tab[i][j] + " \t");
+                System.out.print(matrice[i][j] + " \t");
             }
         }
     }
