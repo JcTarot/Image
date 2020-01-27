@@ -19,19 +19,19 @@ public class Image {
         final int NL=5,NC=6;
         // VARIABLES
 
-        // initialisation de la matrice image
+        // tableau test
         int[][] T = new int[][] {
                                     {5,50},
                                     {75,40}
                                     };   
-        
-                int[][] M = new int[][] {
-                            {25,	28,	100,	100,	100,	100},
-                            {44,	45,	50,	100,	100,	100},
-                            {65,	65,	50,	20,	100,	100 },
-                            {90,	62,	100,	5,	0,	0},
-                            {60,	87,	100,	0,	100,	100}
-                                    }; 
+        // initialisation de la matrice image
+        int[][] M = new int[][] {
+                    {25,	28,	100,	100,	100,	100},
+                    {44,	45,	50,	100,	100,	100},
+                    {65,	65,	50,	20,	100,	100 },
+                    {90,	62,	100,	5,	0,	0},
+                    {60,	87,	100,	0,	100,	100}
+                            }; 
 
         AfficheTableau(M);
         System.out.println("Matrice Image");
