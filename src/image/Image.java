@@ -38,11 +38,15 @@ public class Image {
         // matrice image inversé pour image négative
         Mystere(M);
         AfficheTableau(M);
-                System.out.println("Matrice Négative");
-
+        System.out.println("Matrice Négative");
+        // matrice image contrasté    
         ContrastPlus(M);
         AfficheTableau(M);
-                System.out.println("Matrice Image Contrast Plus");
+        System.out.println("Matrice Image Contrast Plus");
+        
+        // moyenne des valeurs de la matrice image   
+        System.out.println();
+        System.out.printf("\rMatrice Image Moyenne : %d", Moyenne(M));
     }
 
     public static int[][] Mystere(int[][] tab) {
@@ -78,8 +82,8 @@ public class Image {
         }
         return tab;
     }
-    
-    public static void AfficheTableau(int[][] tab) {
+
+        public static void AfficheTableau(int[][] tab) {
         // Affiche Tableau Dimension 2 ordre 5 
         // CONSTANTES
         final int NL=5,NC=6;
@@ -89,5 +93,18 @@ public class Image {
                 System.out.print(tab[i][j] + " \t");
             }
         }
+    }
+    
+    public static int Moyenne(int[][] tab) {
+        // Affiche Tableau Dimension 2 ordre 5 
+        // CONSTANTES
+        final int NL=5,NC=6;
+        int somme = 0;
+        for (int i = 0; i < NL; i++) {
+            for (int j = 0; j < NC; j++) {
+                somme = tab[i][j] + somme;
+            }
+        }
+        return somme / (NL*NC);
     }
 }
